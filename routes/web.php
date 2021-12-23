@@ -1,11 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//use App\Http\Controllers\homeControl;
 use App\Http\Controllers\homeControl;
-//use App\Http\Controllers\homeControls;
 use App\Http\Controllers\adminControl;
-//use App\Http\Controllers\adminControls;
+
+
 
 
 /*
@@ -19,12 +18,27 @@ use App\Http\Controllers\adminControl;
 |
 */
 
+// Route::get("/deleteuser/{id}",[adminControl::class,"deleteuser"]);
 
+// Home Page
 Route::get("/",[homeControl::class,"index"]);
-Route::get("/users",[adminControl::class,"user"]);
-Route::get("/deleteuser/{id}",[adminControl::class,"deleteuser"]);
-
 Route::get("/redirect",[homeControl::class,"redirectFunct"]);
+Route::get("/users",[adminControl::class,"user"]);
+
+// Manager Create Project
+Route::get("/createproject",[adminControl::class,"createprojectview"]);
+Route::POST("/add",[adminControl::class,"saveData"]);
+
+// Manager Edit Project
+Route::get("/manageproject",[homeControl::class,'manageproject']);
+
+
+
+
+
+
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
