@@ -14,16 +14,21 @@ class homeControl extends Controller
 
     function redirectFunct()
     {
-        $typeuser=Auth::user()->usertype;
+        $typeuser=Auth::user()->role;
 
         if($typeuser=='1')
         {
-            return view("admin.adminpage");
+            return view("admin.manager");
         }
 
-        else
+        else if($typeuser=='2')
         {
-            return view('home');
+            return view('admin.leader');
+        }
+
+        else 
+        {
+            return view('admin.member');
         }
     }
 }
