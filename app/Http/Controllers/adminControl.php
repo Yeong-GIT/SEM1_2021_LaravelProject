@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\manager;
 use App\Models\project;
@@ -32,13 +33,73 @@ class adminControl extends Controller
     return view ('admin.createproject', compact('data'));
     }
 
+    public function manageProject()
+    {
+    $x=DB::table('users')
+    ->join('project_manager','users.id',"=",'project_manager.project_leader')->get();
+    return view('admin.manageproject',['x'=>$x]);
+ 
+    }
+
+    function showProject($project_id)
+    {
+        $data=manager::all();
+        $x=project::find($project_id);
+        return view('admin.editproject',['x'=>$x],['data'=>$data]);
+      
+    }
+
+    function update(Request $req)
+    {
+        $data=project::find($req->project_id);
+        $data->project_id=$req->project_id;
+        $data->project_type=$req->select;
+        $data->project_name=$req->project;
+        $data->project_leader=$req->select1;
+        $data->save();
+        return redirect('/manageproject');
+
+    }
+
+    // function leader($project_id)
+    // {
+    //     $data=manager::all();
+    //     $x=project::find($project_id);
+    //     return view('admin.edit_leader',['x'=>$x],['data'=>$data]);
+    
+ 
+    // }
+
+    function deleteProj($project_id)
+    {
+        $data=project::find($project_id);
+        $data->delete();
+        return redirect()->back();
+    }
+
+    function updateleader(Request $req)
+    {
+      
+       $data=project::find($req->project_id);
+       echo$data->project_id=$req->project_id;
+       $data->start_date=$req->sd;
+       $data->end_date=$req->ed;
+        $data->duration=$req->duration;
+       $data->cost=$req->cost;
+       $data->client=$req->client;
+       echo $data->project_member=implode(',',(array)$req->select5);
+       $data->project_status=$req->select6;
+       $data->project_stage=$req->select7;
+       $data->save();
+       return redirect('/redirect');
+      
+      
+
+    }
+
     
 
-    public function manageproject()
-    {
-        $data=user::all();
-        return view("admin.manageproject",compact("data"));
-    }
+    
 
     public function deleteuser($id)
     {

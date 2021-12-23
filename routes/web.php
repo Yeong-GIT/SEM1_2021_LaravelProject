@@ -30,7 +30,13 @@ Route::get("/createproject",[adminControl::class,"createprojectview"]);
 Route::POST("/add",[adminControl::class,"saveData"]);
 
 // Manager Edit Project
-Route::get("/manageproject",[homeControl::class,'manageproject']);
+Route::get("/manageproject",[adminControl::class,'manageproject']);
+Route::get("upd/{id}",[adminControl::class,'showProject']);
+Route::POST("editproject",[adminControl::class,'update']);
+
+
+//Manager Delete Project
+Route::get("del/{project_id}",[adminControl::class,'deleteProj']);
 
 
 
