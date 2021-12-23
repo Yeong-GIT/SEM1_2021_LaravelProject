@@ -97,6 +97,14 @@ class adminControl extends Controller
 
     }
 
+    public function leaderedit()
+    {
+        $x=DB::table('users')
+        ->join('project_manager','users.id',"=",'project_manager.project_leader')
+        ->get();
+        return view('admin.leaderedit',['x'=>$x]);
+    }
+
     
 
     

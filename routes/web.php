@@ -34,9 +34,12 @@ Route::get("/manageproject",[adminControl::class,'manageproject']);
 Route::get("upd/{id}",[adminControl::class,'showProject']);
 Route::POST("editproject",[adminControl::class,'update']);
 
-
 //Manager Delete Project
 Route::get("del/{project_id}",[adminControl::class,'deleteProj']);
+
+//Leader View Project
+Route::get("/leaderedit",[adminControl::class,"leaderedit"]);
+
 
 
 
