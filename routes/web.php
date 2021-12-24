@@ -38,7 +38,13 @@ Route::POST("editproject",[adminControl::class,'update']);
 Route::get("del/{project_id}",[adminControl::class,'deleteProj']);
 
 //Leader View Project
-Route::get("/leaderedit",[adminControl::class,"leaderedit"]);
+// Route::get("/leaderedit",[adminControl::class,"viewinvolve"]);
+// Route::get("update/{id}",[adminControl::class,'viewproject']);
+// Route::POST("editdetails",[adminControl::class,'editdetails']);
+Route::get("showproject",[adminControl::class,'viewinvolve']);
+Route::get("updateleader/{ject_id}",[adminControl::class,'show']);
+Route::POST("editleader",[adminControl::class,'updateleader']);
+
 
 
 
