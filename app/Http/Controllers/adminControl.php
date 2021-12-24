@@ -146,5 +146,13 @@ class adminControl extends Controller
         return redirect()->back();
     }
 
+    function viewDetails()//Show Details Only
+    {
+        $x=DB::table('users')
+        ->join('project_manager','users.id',"=",'project_manager.project_leader')->get();
+        return view('admin.memberview',['x'=>$x]);
+     
+        }
+
     
 }
