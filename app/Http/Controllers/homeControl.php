@@ -32,18 +32,14 @@ class homeControl extends Controller
         {
             
             
-            $x=DB::table('users')
-            ->join('project_manager','users.id',"=",'project_manager.project_leader')
-            ->get();
-            return view('admin.leader',['x'=>$x]);
+            $data=manager::all();
+            return view("admin.leader", compact('data'));
         }
 
         else
         {
-            $x=DB::table('users')
-            ->join('project_manager','users.id',"=",'project_manager.project_leader')
-            ->get();
-            return view('admin.member',['x'=>$x]);
+            $data=manager::all();
+            return view("admin.member", compact('data'));
         }
     }
 
