@@ -32,14 +32,14 @@
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Project Name</label></div>
                     <div class="col-12 col-md-9"><input type="text" id="text-input" name="project" value="{{$x->project_name}}" class="form-control"><small class="form-text text-muted"></small></div>
                 </div>
-                {{ old('title') == '1' ? 'selected' : '' }}
+                {{ old('title') == '2' ? 'selected' : '' }}
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="select" class=" form-control-label">Project Leader</label></div>
                     <div class="col-12 col-md-9">
                     <select name="select1" id="select" class="form-control">
                        
                        @foreach($data as $data) 
-                       @if ($data->role=='1') 
+                       @if ($data->role=='2') 
                        <option value="{{$data->id}}"{{$data->id==$x->project_leader ? 'selected="selected"' : '' }}">{{ $data->name }}</option>
 
                  

@@ -7,6 +7,7 @@
     @include("admin.admincss")
   </head>
   <body>
+      
   <div class="container-scroller">
   @include("admin.leadernavbar")
   <div class="content mt-3">
@@ -27,13 +28,13 @@
                                             <th>Project Name</th>
                                             <th>Project Leader</th>
                                             <th>Project Member ID</th>
-                                            <th>Project Start Date</th>
-                                            <th>Project End Date</th>
-                                            <th>Project Duration</th>
-                                            <th>Project Cost</th>
-                                            <th>Project Client</th>
-                                            <th>Project Project Stage</th>
-                                            <th>Project Project Status</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Duration</th>
+                                            <th>Cost</th>
+                                            <th>Client</th>
+                                            <th>Project Stage</th>
+                                            <th>Project Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -154,6 +155,7 @@
         </div><!-- .content -->
 
     </div>
+</div>
 
   @include("admin.adminscript")
   </body>
