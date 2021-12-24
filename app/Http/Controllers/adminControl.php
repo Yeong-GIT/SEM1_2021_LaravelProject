@@ -61,14 +61,6 @@ class adminControl extends Controller
 
     }
 
-    // function leader($project_id)
-    // {
-    //     $data=manager::all();
-    //     $x=project::find($project_id);
-    //     return view('admin.edit_leader',['x'=>$x],['data'=>$data]);
-    
- 
-    // }
 
     function deleteProj($project_id)
     {
@@ -91,11 +83,10 @@ class adminControl extends Controller
     function viewinvolve()
     {
         $x=DB::table('users')
-    ->join('project_manager','users.id',"=",'project_manager.project_leader')->get();
-    return view('admin.leaderedit',['x'=>$x]);
-    
- 
-    }
+        ->join('project_manager','users.id',"=",'project_manager.project_leader')->get();
+        return view('admin.showproject',['x'=>$x]);
+     
+        }
 
 
     function viewproject(Request $req)

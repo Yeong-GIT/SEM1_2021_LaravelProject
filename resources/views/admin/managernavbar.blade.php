@@ -19,7 +19,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('/manageproject')}}">
+            <a class="nav-link" href="{{url('/showproject')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
