@@ -34,7 +34,6 @@
                                             <th>Project Client</th>
                                             <th>Project Project Stage</th>
                                             <th>Project Project Status</th>
-                                    
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -82,7 +81,7 @@
                                  
                                                
                                                 <a href="{{"update/".$paper->project_id}}">
-                                                <button type="button" class="btn btn-success">Update Details </button>
+                                                <button type="button" class="btn btn-success">Update</button>
                                                 </a> </href> 
                                                 
                                                 

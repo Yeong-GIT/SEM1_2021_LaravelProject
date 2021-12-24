@@ -41,7 +41,7 @@
                         <select name="select1" id="select" class="form-control">
                        
                         @foreach($data as $data) 
-                        @if ($data->role=='1') 
+                        @if ($data->role=='2') 
                         <option value="" selected disabled hidden>Select Project Leader</option>
                         <option value="{{$data->id }}">{{ $data->name }}</option>
                         @endif
