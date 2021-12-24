@@ -30,7 +30,7 @@ Route::get("/createproject",[adminControl::class,"createprojectview"]);
 Route::POST("/add",[adminControl::class,"saveData"]);
 
 // Manager Edit Project
-Route::get("/manageproject",[adminControl::class,'manageproject']);
+Route::get("/manageproject",[adminControl::class,'manageProject']);
 Route::get("upd/{id}",[adminControl::class,'showProject']);
 Route::POST("editproject",[adminControl::class,'update']);
 
@@ -42,7 +42,7 @@ Route::get("del/{project_id}",[adminControl::class,'deleteProj']);
 // Route::get("update/{id}",[adminControl::class,'viewproject']);
 // Route::POST("editdetails",[adminControl::class,'editdetails']);
 Route::get("showproject",[adminControl::class,'viewinvolve']);
-Route::get("updateleader/{ject_id}",[adminControl::class,'show']);
+Route::get("update/{ject_id}",[adminControl::class,'show']);
 Route::POST("editleader",[adminControl::class,'updateleader']);
 
 

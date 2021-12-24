@@ -26,6 +26,14 @@
                                             <th>Project Type</th>
                                             <th>Project Name</th>
                                             <th>Project Leader</th>
+                                            <th>Project Member ID</th>
+                                            <th>Project Start Date</th>
+                                            <th>Project End Date</th>
+                                            <th>Project Duration</th>
+                                            <th>Project Cost</th>
+                                            <th>Project Client</th>
+                                            <th>Project Project Stage</th>
+                                            <th>Project Project Status</th>
                                     
                                             <th>Action</th>
                                         </tr>
@@ -55,9 +63,25 @@
                                             </td>
 
                                             <td>
+                                                @if($paper->project_member)
+                                            
+                                                    {{$paper->project_member}}
+                                            
+                                                @endif
+                                            </td>
+
+                                            <td>{{$paper->start_date}}</td>
+                                            <td>{{$paper->end_date}}</td>
+                                            <td>{{$paper->duration}}</td>
+                                            <td>{{$paper->cost}}</td>
+                                            <td>{{$paper->client}}</td>
+                                            <td>{{$paper->project_stage}}</td>
+                                            <td>{{$paper->project_status}}</td>
+
+                                            <td>
                                  
                                                
-                                                <a href="{{"upd/".$paper->project_id}}">
+                                                <a href="{{"update/".$paper->project_id}}">
                                                 <button type="button" class="btn btn-success">Update Details </button>
                                                 </a> </href> 
                                                 

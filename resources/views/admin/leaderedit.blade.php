@@ -53,38 +53,13 @@
                 </div>
 
                 <div class="row form-group">
-                    <div class="col col-md-3"><label for="password-input" class=" form-control-label">Start Date</label></div>
-                    <div class="col-12 col-md-9"><input type="date" id="rd" name="sd" value="" class="form-control"><small class="help-block form-text"></small></div>
-                </div>
-
-                <div class="row form-group">
-                    <div class="col col-md-3"><label for="password-input" class=" form-control-label">End Date</label></div>
-                    <div class="col-12 col-md-9"><input type="date" id="rd" name="ed" placeholder="Enter End Date" class="form-control"><small class="help-block form-text"></small></div>
-                </div>
-
-                <div class="row form-group">
-                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Duration</label></div>
-                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="duration" placeholder="Enter Duration in months"  class="form-control"><small class="form-text text-muted"></small></div>
-                </div>
-
-                <div class="row form-group">
-                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cost</label></div>
-                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="cost" placeholder="Enter Cost exm: RM2000"  class="form-control"><small class="form-text text-muted"></small></div>
-                </div>
-
-                <div class="row form-group">
-                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Client Name</label></div>
-                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="client" placeholder="Enter Client Name"  class="form-control"><small class="form-text text-muted"></small></div>
-                </div>
-
-                <div class="row form-group">
                     <div class="col col-md-3"><label for="select" class=" form-control-label">Project Members</label></div>
                         <div class="col-12 col-md-9">   
         
-                            <select name="select5[]" data-placeholder="Choose Team Members " multiple class="standardSelect" class="form-control">
+                            <select name="select5[]" data-placeholder="Choose Team Members " class="form-control">
                                 @foreach($data as $d)
                      
-                                @if ($d->role=='2') 
+                                @if ($d->role=='0') 
                             
                                 
                                 <option value="{{$d->id }}">{{ $d->name }}</option>
@@ -95,6 +70,35 @@
 
                         </div>
                 </div>
+
+
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="password-input" class=" form-control-label">Start Date</label></div>
+                    <div class="col-12 col-md-9"><input type="date" id="rd" name="sd" value="" class="form-control"><small class="help-block form-text"></small></div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="password-input" class=" form-control-label">End Date</label></div>
+                    <div class="col-12 col-md-9"><input type="date" id="rd" name="ed"  class="form-control"><small class="help-block form-text"></small></div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Duration</label></div>
+                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="duration" placeholder="Enter Months"  class="form-control"><small class="form-text text-muted"></small></div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cost</label></div>
+                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="cost" placeholder="RM6000"  class="form-control"><small class="form-text text-muted"></small></div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Client Name</label></div>
+                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="client" placeholder="Enter Client"  class="form-control"><small class="form-text text-muted"></small></div>
+                </div>
+
+                
 
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="select" class=" form-control-label">Project progress</label></div>

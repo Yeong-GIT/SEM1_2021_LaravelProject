@@ -57,7 +57,7 @@ class adminControl extends Controller
         $data->project_name=$req->project;
         $data->project_leader=$req->select1;
         $data->save();
-        return redirect('/manageproject');
+        return redirect('manageproject');
 
     }
 
@@ -80,7 +80,7 @@ class adminControl extends Controller
  
     }
 
-    function viewinvolve()
+    function viewinvolve()//showproject link
     {
         $x=DB::table('users')
         ->join('project_manager','users.id',"=",'project_manager.project_leader')->get();
@@ -138,10 +138,6 @@ class adminControl extends Controller
     }
 
 
-
-    
-
-    
 
     public function deleteuser($id)
     {
